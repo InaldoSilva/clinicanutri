@@ -1,0 +1,11 @@
+Como rodar
+Depois de montar seu projeto:
+
+Compile:
+
+nginx
+mvn clean install
+Rode o projeto (após ajustar mainClass no pom.xml, como mostrado acima):
+
+bash
+mvn exec:java
