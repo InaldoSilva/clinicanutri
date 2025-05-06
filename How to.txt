@@ -5,7 +5,7 @@ Compile:
 
 nginx
 mvn clean install
-Rode o projeto (após ajustar mainClass no pom.xml, como mostrado acima):
+Rode o projeto (após ajustar mainClass no pom.xml.
 
 bash
 mvn exec:java
