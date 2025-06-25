@@ -25,15 +25,19 @@ public class RelatorioService {
             Document document = new Document(pdf);
 
             document.add(new Paragraph("Relatório Gerencial - " + mes + "/" + ano));
-            document.add(new Paragraph("===================================="));
+            document.add(new Paragraph("===================================================================="));
+            document.add(new Paragraph("NutriClin"));
+            document.add(new Paragraph("Clínica de Nutrição"));
+            document.add(new Paragraph("===================================================================="));
 
             for (Paciente p : pacientes) {
                 document.add(new Paragraph("Nome: " + p.getNome()));
-                document.add(new Paragraph("Idade: " + p.getIdade()));
+                document.add(new Paragraph("Idade: " + p.getIdade() + " anos"));
+                document.add(new Paragraph("Altura: " + p.getAltura() + " metro"));
                 document.add(new Paragraph("Peso: " + p.getPeso() + " kg"));
                 document.add(new Paragraph("Dieta: " + p.getDieta().getDescricao()));
                 document.add(new Paragraph("Alimentos: " + p.getDieta().getAlimentos()));
-                document.add(new Paragraph("------------------------------------"));
+                document.add(new Paragraph("----------------------------------------------------------------"));
             }
 
             document.close();
@@ -47,7 +51,7 @@ public class RelatorioService {
         String fileName = "relatorio_" + mes + "_" + ano + ".csv";
         try (CSVWriter writer = new CSVWriter(new FileWriter(fileName))) {
             // Cabeçalho
-            writer.writeNext(new String[]{"Nome", "Idade", "Peso", "Dieta", "Alimentos"});
+            writer.writeNext(new String[]{"Nome", "Idade", "Altura", "Peso", "Dieta", "Alimentos"});
 
             // Dados
             for (Paciente p : pacientes) {
