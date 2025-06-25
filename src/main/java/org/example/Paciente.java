@@ -1,11 +1,11 @@
 package org.example;
 
 public class Paciente {
-    private String nome;
-    private int idade;
-    private double altura;
-    private double peso;
-    private Dieta dieta;
+    private final String nome;
+    private final int idade;
+    private final double altura;
+    private final double peso;
+    private final Dieta dieta;
 
     public Paciente(String nome, int idade, double altura, double peso, Dieta dieta) {
         this.nome = nome;
